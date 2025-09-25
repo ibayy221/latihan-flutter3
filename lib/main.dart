@@ -14,6 +14,8 @@ class MyApp extends StatelessWidget {
 }
 
 class TrainingPage extends StatelessWidget {
+  const TrainingPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -179,11 +181,15 @@ class TrainingPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(16),
                       ),
                       child: Center(
-                        // Placeholder image
-                        child: Icon(
-                          Icons.accessibility_new,
-                          size: 48,
-                          color: Colors.blueAccent,
+                        // Ganti dengan gambar kaki.png
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(12),
+                          child: Image.asset(
+                            'image/kaki.png',
+                            width: 60,
+                            height: 60,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                     ),
