@@ -9,7 +9,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: TrainingPage());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: 'Poppins'),
+      home: TrainingPage(),
+    );
   }
 }
 
@@ -24,7 +28,7 @@ class TrainingPage extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         title: Text(
-          'Training',
+          'Latihan',
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
         actions: [
@@ -44,11 +48,11 @@ class TrainingPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Your Program',
+                    'Program maneh',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    'Details',
+                    'Details >',
                     style: TextStyle(
                       color: Colors.blue,
                       fontWeight: FontWeight.w500,
@@ -73,12 +77,12 @@ class TrainingPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Next Workout',
+                      'Olahraga Selanjutnya',
                       style: TextStyle(color: Colors.white70, fontSize: 14),
                     ),
                     SizedBox(height: 8),
                     Text(
-                      'Lets Toning\nand Glutes Workout',
+                      'Ayo lumpat\nsupaya sehat',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 20,
@@ -122,19 +126,40 @@ class TrainingPage extends StatelessWidget {
                 padding: EdgeInsets.all(12),
                 child: Row(
                   children: [
-                    // Ganti dengan gambar figure.png
+                    // Stack gambar figure.png dan card.png
                     Container(
-                      width: 60,
-                      height: 60,
+                      width: 80,
+                      height: 80,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(16),
                       ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(12),
-                        child: Image.asset(
-                          'image/figure.png',
-                          fit: BoxFit.cover,
-                        ),
+                      child: Stack(
+                        alignment: Alignment.centerLeft,
+                        children: [
+                          // card.png di belakang figure.png, tidak memenuhi background
+                          Positioned(
+                            left: 0,
+                            bottom: 0,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(12),
+                              child: Image.asset('image/card.jpg', width: 300),
+                            ),
+                          ),
+                          // figure.png di depan
+                          Positioned(
+                            left: 16,
+                            bottom: 0,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(12),
+                              child: Image.asset(
+                                'image/figure.png',
+                                width: 60,
+                                height: 60,
+                                fit: BoxFit.contain,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     SizedBox(width: 12),
@@ -150,11 +175,11 @@ class TrainingPage extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            'keep it up',
+                            'Lanjutkan latihanmu',
                             style: TextStyle(color: Colors.black54),
                           ),
                           Text(
-                            'stick to your plan',
+                            'Tetap pada rencanamu',
                             style: TextStyle(color: Colors.black38),
                           ),
                         ],
@@ -204,11 +229,15 @@ class TrainingPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(16),
                       ),
                       child: Center(
-                        // Placeholder image
-                        child: Icon(
-                          Icons.fitness_center,
-                          size: 48,
-                          color: Colors.purpleAccent,
+                        // Ganti dengan gambar tangan.png
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(12),
+                          child: Image.asset(
+                            'image/tangan.png',
+                            width: 60,
+                            height: 60,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                     ),

@@ -59,3 +59,7 @@ flutter:
     - image/card.jpg
     - image/kaki.png
     - image/tangan.png
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
