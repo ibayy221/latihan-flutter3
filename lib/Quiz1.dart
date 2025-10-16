@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
 }
 
 class TrainingPage extends StatelessWidget {
-  const TrainingPage({super.key});
+  TrainingPage({super.key});
   int totalKlik = 0; 
   @override
   Widget build(BuildContext context) {
